@@ -10,7 +10,7 @@ public:
         while (right > left && arr[right - 1] <= arr[right]) right--;
         
         int mini = min(n - left - 1, right);
-        for(int i = 0; i <= left; ++i){
+        for(int i = 0; i <= left; i++){
             int j = lower_bound(arr.begin() + right, arr.end(), arr[i]) - arr.begin();
             mini = min(mini, j - i - 1);
             if(j == n) break;
