@@ -5,14 +5,11 @@ public:
         numWithIndex.reserve(nums.size());
         long long sum = 0;
         vector<bool> marked(nums.size(), false);
-
         for (int i = 0; i < nums.size(); i++) {
             numWithIndex.emplace_back(nums[i], i);
         }
-        
         sort(numWithIndex.begin(), numWithIndex.end());
-        
-        for (const auto& pair : numWithIndex) {
+        for (auto& pair : numWithIndex) {
             int num = pair.first;
             int idx = pair.second;
             if (!marked[idx]) {
